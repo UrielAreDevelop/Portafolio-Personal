@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ExperienciaDTO>
+
+@if (Model is not null) 
+{
+    <div class="MiExperiencia text-center" style="padding-top: 6rem;">
+        <h2>MI EXPERIENCIA LABORAL</h2>
+        <p>Estas son las empresas donde eh tenido la oportunidad de colaborar</p>
+    </div>
+
+    <partial name="_ListadoExperiencia" model="Model"></partial>
+}

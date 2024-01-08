@@ -8,24 +8,35 @@ namespace Portafolio.Controllers
     public class HomeController : Controller
     {
         private readonly IRepositorioProyectos repositorioProyectos;
+        private readonly IRepositorioExperiencia repositorioExperiencia;
         private readonly IServicioEmail servicioEmail;
 
-        public HomeController(IRepositorioProyectos repositorioProyectos, IServicioEmail servicioEmail)
+        public HomeController(IRepositorioProyectos repositorioProyectos, IServicioEmail servicioEmail, IRepositorioExperiencia repositorioExperiencia)
         {
-           this.repositorioProyectos = repositorioProyectos;
-           this.servicioEmail = servicioEmail;
+            this.repositorioProyectos = repositorioProyectos;
+            this.servicioEmail = servicioEmail;
+            this.repositorioExperiencia = repositorioExperiencia;
         }
 
         public IActionResult Index()
         {
             var proyectos = repositorioProyectos.ObtenerProyectos().Take(5).ToList();
+            var experiencia = repositorioExperiencia.ObtenerExperiencia().Take(4).ToList();
             var modelo = new HomeIndexDTO()
             {
+                Experiencia = experiencia,
                 Proyetos = proyectos
             };
             return View(modelo);
         }
 
+
+        public IActionResult Experiencia() 
+        {
+            var experiencia = repositorioExperiencia.ObtenerExperiencia();
+
+            return View(experiencia);
+        }
         public IActionResult Proyectos()
         {
             var proyectos = repositorioProyectos.ObtenerProyectos();
