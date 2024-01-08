@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\css\UrielCV.pdf" />
     <None Include="wwwroot\js\particles.min.js" />
   </ItemGroup>
 

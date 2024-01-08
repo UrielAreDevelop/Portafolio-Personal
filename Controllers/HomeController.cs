@@ -18,7 +18,7 @@ namespace Portafolio.Controllers
 
         public IActionResult Index()
         {
-            var proyectos = repositorioProyectos.ObtenerProyectos().Take(4).ToList();
+            var proyectos = repositorioProyectos.ObtenerProyectos().Take(5).ToList();
             var modelo = new HomeIndexDTO()
             {
                 Proyetos = proyectos
@@ -42,8 +42,10 @@ namespace Portafolio.Controllers
         [HttpPost]
         public async Task<IActionResult> Contacto(ContactoDTO contactoDTO)
         {
+
             await servicioEmail.Enviar(contactoDTO);
             return RedirectToAction("Gracias");
+         
         }
 
         public IActionResult Gracias()

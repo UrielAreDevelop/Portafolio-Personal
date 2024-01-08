@@ -17,6 +17,13 @@ namespace Portafolio.Servicios
             return new List<ProyectoDTO> {
                 new ProyectoDTO
                 {
+                    Titulo = "Desarrollo de punto de venta para farmacias",
+                    Descripcion = "Estuve involucrado en el desarrollo de un sistema de punto de venta para una linea de farmacia en donde utilicé tecnologias como C# .NET 6, Patron de diseño MVC y Windows Forms",
+                    link = "http://amazon.com",
+                    imagenURL = "/images/farmapronto.png"
+                },
+                new ProyectoDTO
+                {
                     Titulo = "Desarrollo de Programa de Auditoría",
                     Descripcion = "Desarrollé un programa utilizando PHP y MySQL que permite realizar auditorías y almacenar los resultados en una base de datos. El programa incluye un formulario interactivo donde se registran los comentarios y validaciones de la auditoría.",
                     link = "http://amazon.com",
